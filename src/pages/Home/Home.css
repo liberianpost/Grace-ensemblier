@@ -40,6 +40,46 @@ body {
   50% { transform: scale(1.1) rotate(180deg); }
 }
 
+/* Pulsating Title Animation */
+.pulsating-title {
+  animation: pulsate 6s ease-in-out infinite;
+  display: inline-block;
+  transform-origin: center;
+}
+
+@keyframes pulsate {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+    filter: blur(20px);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0px);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1.05);
+    filter: blur(0px);
+  }
+  60% {
+    opacity: 0.8;
+    transform: scale(1);
+    filter: blur(2px);
+  }
+  80% {
+    opacity: 0.3;
+    transform: scale(1.1);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.3);
+    filter: blur(20px);
+  }
+}
+
 /* Gold Glass Morphism */
 .gold-glass-card {
   background: rgba(212, 175, 55, 0.1);
@@ -272,5 +312,19 @@ body {
   
   .luxury-stat-number {
     font-size: 2.5rem;
+  }
+  
+  .pulsating-title {
+    animation-duration: 5s;
+  }
+}
+
+@media (max-width: 480px) {
+  .luxury-hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .pulsating-title {
+    animation-duration: 4s;
   }
 }

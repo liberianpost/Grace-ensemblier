@@ -8,8 +8,8 @@
   --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #FFD700 50%, #B8860B 100%);
   
   /* Caramel Colors (lighter background colors) */
-  --caramel-dark: #A0522D;
-  --caramel-medium: #CD853F;
+  --caramel-dark: #8B4513; /* Dark caramel */
+  --caramel-medium: #A0522D;
   --caramel-light: #DEB887;
   --caramel-cream: #F5DEB3;
   --caramel-soft: #E6D3B3;
@@ -19,7 +19,7 @@
   
   /* Caramel Gradients */
   --caramel-gradient: linear-gradient(135deg, var(--caramel-dark) 0%, var(--caramel-medium) 50%, var(--caramel-light) 100%);
-  --caramel-glass: rgba(160, 82, 45, 0.15);
+  --caramel-glass: rgba(139, 69, 19, 0.15);
   --caramel-border: rgba(255, 255, 255, 0.3);
   
   /* Luxury Backgrounds */
@@ -35,7 +35,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Luxury Caramel Background Animation */
+/* Luxury Caramel Background - No Animation */
 .caramel-bg {
   position: fixed;
   top: 0;
@@ -43,59 +43,15 @@ body {
   width: 100%;
   height: 100%;
   background: 
-    radial-gradient(circle at 20% 80%, rgba(160, 82, 45, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(205, 133, 63, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(139, 69, 19, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(160, 82, 45, 0.2) 0%, transparent 50%),
     radial-gradient(circle at 40% 40%, rgba(222, 184, 135, 0.15) 0%, transparent 50%),
     radial-gradient(circle at 60% 60%, rgba(245, 222, 179, 0.1) 0%, transparent 50%),
     radial-gradient(circle at 30% 70%, rgba(233, 220, 201, 0.25) 0%, transparent 50%);
   z-index: -2;
-  animation: luxuryShift 20s ease-in-out infinite;
 }
 
-@keyframes luxuryShift {
-  0%, 100% { transform: scale(1) rotate(0deg); }
-  50% { transform: scale(1.1) rotate(180deg); }
-}
-
-/* Pulsating Title Animation */
-.pulsating-title {
-  animation: pulsate 6s ease-in-out infinite;
-  display: inline-block;
-  transform-origin: center;
-}
-
-@keyframes pulsate {
-  0% {
-    opacity: 0;
-    transform: scale(0.3);
-    filter: blur(20px);
-  }
-  20% {
-    opacity: 1;
-    transform: scale(1);
-    filter: blur(0px);
-  }
-  40% {
-    opacity: 1;
-    transform: scale(1.05);
-    filter: blur(0px);
-  }
-  60% {
-    opacity: 0.8;
-    transform: scale(1);
-    filter: blur(2px);
-  }
-  80% {
-    opacity: 0.3;
-    transform: scale(1.1);
-    filter: blur(10px);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(1.3);
-    filter: blur(20px);
-  }
-}
+/* Removed all animation keyframes */
 
 /* Caramel Glass Morphism */
 .caramel-glass-card {
@@ -103,59 +59,43 @@ body {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--caramel-border);
-  border-radius: 16px;
+  border-radius: 12px;
   box-shadow: 
-    0 8px 32px rgba(160, 82, 45, 0.3),
+    0 4px 16px rgba(139, 69, 19, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
 }
 
-.caramel-glass-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  transition: left 0.6s;
-}
-
-.caramel-glass-card:hover::before {
-  left: 100%;
-}
-
 .caramel-glass-card:hover {
-  transform: translateY(-12px) scale(1.02);
+  transform: translateY(-5px);
   box-shadow: 
-    0 20px 40px rgba(160, 82, 45, 0.4),
-    0 0 80px rgba(205, 133, 63, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+    0 8px 24px rgba(139, 69, 19, 0.4),
+    0 0 40px rgba(160, 82, 45, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 /* Luxury Typography */
 .luxury-hero-title {
-  font-size: 5rem;
+  font-size: 3rem;
   font-weight: 700;
   color: white;
   text-shadow: 
-    0 4px 8px rgba(0, 0, 0, 0.3),
-    0 0 30px rgba(255, 255, 255, 0.5);
-  margin-bottom: 1.5rem;
-  letter-spacing: 2px;
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(255, 255, 255, 0.3);
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
   font-family: 'Cormorant Garamond', serif;
 }
 
 .luxury-hero-subtitle {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-weight: 300;
   color: white;
-  margin-bottom: 3rem;
-  letter-spacing: 1px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 2rem;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   font-style: italic;
 }
 
@@ -164,46 +104,42 @@ body {
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   border: 2px solid var(--caramel-border);
-  border-radius: 50px;
+  border-radius: 40px;
   color: white;
-  padding: 18px 40px;
-  font-size: 1.2rem;
+  padding: 12px 30px;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   position: relative;
   overflow: hidden;
   font-family: 'Cormorant Garamond', serif;
 }
 
-.caramel-glass-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.3);
-  transition: left 0.4s ease;
-  z-index: -1;
-}
-
-.caramel-glass-button:hover::before {
-  left: 0;
-}
-
 .caramel-glass-button:hover {
   color: white;
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   box-shadow: 
-    0 10px 25px rgba(255, 255, 255, 0.2),
-    0 0 30px rgba(255, 255, 255, 0.3);
-  border: 2px solid rgba(255, 255, 255, 0.8);
+    0 6px 16px rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.6);
 }
 
-/* Gold Particles */
+/* Specific button background colors */
+.discover-collection-btn {
+  background: rgba(139, 69, 19, 0.8) !important; /* Dark caramel */
+}
+
+.luxury-tour-btn {
+  background: rgba(139, 69, 19, 0.8) !important; /* Dark caramel */
+}
+
+.begin-journey-btn {
+  background: rgba(139, 69, 19, 0.8) !important; /* Dark caramel */
+}
+
+/* Gold Particles - Static */
 .gold-particles-container {
   position: fixed;
   top: 0;
@@ -218,62 +154,38 @@ body {
   position: absolute;
   background: radial-gradient(circle, var(--gold-primary), transparent);
   border-radius: 50%;
-  animation: goldFloat 20s infinite linear;
-  opacity: 0.6;
-}
-
-@keyframes goldFloat {
-  0% { transform: translateY(0px) rotate(0deg); }
-  100% { transform: translateY(-1000px) rotate(360deg); }
+  opacity: 0.3;
 }
 
 /* Luxury Stats */
 .luxury-stats {
-  background: rgba(160, 82, 45, 0.3);
+  background: rgba(139, 69, 19, 0.6); /* Dark caramel */
   border: 1px solid var(--caramel-border);
-  border-radius: 24px;
-  padding: 4rem;
+  border-radius: 16px;
+  padding: 2.5rem;
   position: relative;
 }
 
-.luxury-stats::after {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: var(--caramel-gradient);
-  border-radius: 26px;
-  z-index: -1;
-  animation: borderGlow 3s ease-in-out infinite;
-}
-
-@keyframes borderGlow {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
-}
-
 .luxury-stat-number {
-  font-size: 4rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: white;
-  text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
   margin-bottom: 0.5rem;
 }
 
 .luxury-stat-label {
-  font-size: 1.3rem;
+  font-size: 1rem;
   color: white;
   font-weight: 300;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 /* Image Overlay Effects */
 .luxury-image-container {
   position: relative;
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: 12px;
 }
 
 .luxury-image-container::before {
@@ -283,7 +195,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, rgba(160, 82, 45, 0.2), rgba(205, 133, 63, 0.1));
+  background: linear-gradient(45deg, rgba(139, 69, 19, 0.2), rgba(160, 82, 45, 0.1));
   z-index: 1;
   transition: opacity 0.3s ease;
 }
@@ -294,18 +206,18 @@ body {
 
 /* Premium Scrollbar */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
   background: var(--caramel-dark);
-  border-radius: 10px;
+  border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--caramel-gradient);
-  border-radius: 10px;
-  border: 2px solid var(--caramel-dark);
+  border-radius: 6px;
+  border: 1px solid var(--caramel-dark);
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -315,28 +227,59 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
   .luxury-hero-title {
-    font-size: 3rem;
+    font-size: 2.2rem;
   }
   
   .luxury-hero-subtitle {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
   
   .luxury-stat-number {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   
-  .pulsating-title {
-    animation-duration: 5s;
+  .caramel-glass-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 480px) {
   .luxury-hero-title {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
   }
   
-  .pulsating-title {
-    animation-duration: 4s;
+  .luxury-hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .luxury-stat-number {
+    font-size: 1.8rem;
+  }
+  
+  .luxury-stats {
+    padding: 1.5rem;
+  }
+  
+  .caramel-glass-card {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Mobile-first adjustments */
+@media (max-width: 360px) {
+  .luxury-hero-title {
+    font-size: 1.6rem;
+  }
+  
+  .luxury-hero-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .caramel-glass-button {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+    width: 100%;
+    margin-bottom: 0.5rem;
   }
 }

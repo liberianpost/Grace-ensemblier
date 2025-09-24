@@ -1,14 +1,29 @@
-/* src/Home.css - Luxury Gold Theme */
+/* src/Home.css - Luxury Caramel & Gold Theme */
 :root {
+  /* Gold Colors (kept for accents) */
   --gold-primary: #D4AF37;
   --gold-secondary: #FFD700;
   --gold-dark: #B8860B;
   --gold-light: #FFF8DC;
   --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #FFD700 50%, #B8860B 100%);
-  --gold-glass: rgba(212, 175, 55, 0.15);
-  --gold-border: rgba(255, 215, 0, 0.3);
-  --black-bg: #0A0A0A;
-  --luxury-bg: linear-gradient(45deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+  
+  /* Caramel Colors (new background colors) */
+  --caramel-dark: #8B4513;
+  --caramel-medium: #A0522D;
+  --caramel-light: #D2691E;
+  --caramel-cream: #F4A460;
+  --caramel-soft: #DEB887;
+  --caramel-rich: #CD853F;
+  --caramel-warm: #D2B48C;
+  --caramel-deep: #A52A2A;
+  
+  /* Caramel Gradients */
+  --caramel-gradient: linear-gradient(135deg, var(--caramel-dark) 0%, var(--caramel-medium) 50%, var(--caramel-light) 100%);
+  --caramel-glass: rgba(139, 69, 19, 0.15);
+  --caramel-border: rgba(210, 180, 140, 0.3);
+  
+  /* Luxury Backgrounds */
+  --luxury-bg: linear-gradient(45deg, var(--caramel-dark) 0%, var(--caramel-medium) 50%, var(--caramel-rich) 100%);
 }
 
 body {
@@ -16,21 +31,23 @@ body {
   font-family: 'Cormorant Garamond', 'Times New Roman', serif;
   background: var(--luxury-bg);
   background-attachment: fixed;
-  color: var(--gold-light);
+  color: white;
   overflow-x: hidden;
 }
 
-/* Luxury Gold Background Animation */
-.luxury-bg {
+/* Luxury Caramel Background Animation */
+.caramel-bg {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: 
-    radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(184, 134, 11, 0.05) 0%, transparent 50%);
+    radial-gradient(circle at 20% 80%, rgba(139, 69, 19, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(210, 105, 30, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(205, 133, 63, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 60% 60%, rgba(244, 164, 96, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 30% 70%, rgba(222, 184, 135, 0.25) 0%, transparent 50%);
   z-index: -2;
   animation: luxuryShift 20s ease-in-out infinite;
 }
@@ -80,22 +97,22 @@ body {
   }
 }
 
-/* Gold Glass Morphism */
-.gold-glass-card {
-  background: rgba(212, 175, 55, 0.1);
+/* Caramel Glass Morphism */
+.caramel-glass-card {
+  background: rgba(139, 69, 19, 0.2);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--gold-border);
+  border: 1px solid var(--caramel-border);
   border-radius: 16px;
   box-shadow: 
-    0 8px 32px rgba(212, 175, 55, 0.2),
+    0 8px 32px rgba(139, 69, 19, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
   overflow: hidden;
 }
 
-.gold-glass-card::before {
+.caramel-glass-card::before {
   content: '';
   position: absolute;
   top: 0;
@@ -106,17 +123,17 @@ body {
   transition: left 0.6s;
 }
 
-.gold-glass-card:hover::before {
+.caramel-glass-card:hover::before {
   left: 100%;
 }
 
-.gold-glass-card:hover {
+.caramel-glass-card:hover {
   transform: translateY(-12px) scale(1.02);
   box-shadow: 
-    0 20px 40px rgba(212, 175, 55, 0.3),
-    0 0 80px rgba(255, 215, 0, 0.2),
+    0 20px 40px rgba(139, 69, 19, 0.4),
+    0 0 80px rgba(210, 105, 30, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  border: 1px solid rgba(255, 215, 0, 0.5);
+  border: 1px solid rgba(210, 180, 140, 0.6);
 }
 
 /* Luxury Typography */
@@ -138,20 +155,20 @@ body {
 .luxury-hero-subtitle {
   font-size: 1.8rem;
   font-weight: 300;
-  color: var(--gold-light);
+  color: white;
   margin-bottom: 3rem;
   letter-spacing: 1px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   font-style: italic;
 }
 
-/* Gold Buttons */
-.gold-glass-button {
-  background: rgba(212, 175, 55, 0.2);
+/* Caramel Buttons */
+.caramel-glass-button {
+  background: rgba(139, 69, 19, 0.3);
   backdrop-filter: blur(10px);
-  border: 2px solid var(--gold-border);
+  border: 2px solid var(--caramel-border);
   border-radius: 50px;
-  color: var(--gold-light);
+  color: white;
   padding: 18px 40px;
   font-size: 1.2rem;
   font-weight: 600;
@@ -164,29 +181,29 @@ body {
   font-family: 'Cormorant Garamond', serif;
 }
 
-.gold-glass-button::before {
+.caramel-glass-button::before {
   content: '';
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: var(--gold-gradient);
+  background: var(--caramel-gradient);
   transition: left 0.4s ease;
   z-index: -1;
 }
 
-.gold-glass-button:hover::before {
+.caramel-glass-button:hover::before {
   left: 0;
 }
 
-.gold-glass-button:hover {
-  color: #000;
+.caramel-glass-button:hover {
+  color: white;
   transform: translateY(-3px);
   box-shadow: 
-    0 10px 25px rgba(212, 175, 55, 0.3),
-    0 0 30px rgba(255, 215, 0, 0.2);
-  border: 2px solid var(--gold-primary);
+    0 10px 25px rgba(139, 69, 19, 0.4),
+    0 0 30px rgba(210, 105, 30, 0.3);
+  border: 2px solid var(--caramel-light);
 }
 
 /* Gold Particles */
@@ -215,8 +232,8 @@ body {
 
 /* Luxury Stats */
 .luxury-stats {
-  background: rgba(10, 10, 10, 0.8);
-  border: 1px solid var(--gold-border);
+  background: rgba(139, 69, 19, 0.3);
+  border: 1px solid var(--caramel-border);
   border-radius: 24px;
   padding: 4rem;
   position: relative;
@@ -229,7 +246,7 @@ body {
   left: -2px;
   right: -2px;
   bottom: -2px;
-  background: var(--gold-gradient);
+  background: var(--caramel-gradient);
   border-radius: 26px;
   z-index: -1;
   animation: borderGlow 3s ease-in-out infinite;
@@ -252,7 +269,7 @@ body {
 
 .luxury-stat-label {
   font-size: 1.3rem;
-  color: var(--gold-light);
+  color: white;
   font-weight: 300;
   letter-spacing: 1px;
 }
@@ -271,7 +288,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, rgba(212, 175, 55, 0.1), rgba(255, 215, 0, 0.05));
+  background: linear-gradient(45deg, rgba(139, 69, 19, 0.2), rgba(210, 105, 30, 0.1));
   z-index: 1;
   transition: opacity 0.3s ease;
 }
@@ -286,18 +303,18 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1a1a;
+  background: var(--caramel-dark);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--gold-gradient);
+  background: var(--caramel-gradient);
   border-radius: 10px;
-  border: 2px solid #1a1a1a;
+  border: 2px solid var(--caramel-dark);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
+  background: linear-gradient(135deg, var(--caramel-light) 0%, var(--caramel-medium) 100%);
 }
 
 /* Responsive Design */

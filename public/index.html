@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#D4AF37" />
-    <meta name="description" content="Grace Ensemblier - Luxury gold premium home decoration and interior design" />
+    <meta name="theme-color" content="#8B4513" />
+    <meta name="description" content="Grace Ensemblier - Luxury caramel gold premium home decoration and interior design" />
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -17,15 +17,15 @@
     <link rel="preconnect" href="https://firebasestorage.googleapis.com">
     
     <!-- Open Graph Meta Tags for Social Sharing -->
-    <meta property="og:title" content="Grace Ensemblier - Luxury Gold Home Decor">
-    <meta property="og:description" content="Transform your space with our exclusive luxury gold home decoration and interior design pieces">
+    <meta property="og:title" content="Grace Ensemblier - Luxury Caramel Gold Home Decor">
+    <meta property="og:description" content="Transform your space with our exclusive luxury caramel gold home decoration and interior design pieces">
     <meta property="og:type" content="website">
     <meta property="og:image" content="%PUBLIC_URL%/og-image.jpg">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Grace Ensemblier - Luxury Gold Home Decor">
-    <meta name="twitter:description" content="Elevate your interior design with our luxury gold home decoration collection">
+    <meta name="twitter:title" content="Grace Ensemblier - Luxury Caramel Gold Home Decor">
+    <meta name="twitter:description" content="Elevate your interior design with our luxury caramel gold home decoration collection">
     
     <!-- iOS Safari Meta Tags -->
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -33,37 +33,37 @@
     <meta name="apple-mobile-web-app-title" content="Grace Ensemblier">
     
     <!-- Windows Meta Tags -->
-    <meta name="msapplication-TileColor" content="#D4AF37">
+    <meta name="msapplication-TileColor" content="#8B4513">
     <meta name="msapplication-config" content="%PUBLIC_URL%/browserconfig.xml">
     
     <!-- PWA Manifest -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     
-    <title>Grace Ensemblier - Luxury Gold Home Decoration & Interior Design</title>
+    <title>Grace Ensemblier - Luxury Caramel Gold Home Decoration & Interior Design</title>
     
     <style>
-      /* Critical CSS for initial loading - Luxury Gold Theme */
+      /* Critical CSS for initial loading - Luxury Caramel Gold Theme */
       :root {
         --gold-primary: #D4AF37;
         --gold-secondary: #FFD700;
-        --gold-dark: #B8860B;
-        --gold-light: #FFF8DC;
-        --black-bg: #0A0A0A;
+        --caramel-dark: #8B4513;
+        --caramel-medium: #A0522D;
+        --caramel-light: #D2691E;
       }
       
       body {
         margin: 0;
-        background: var(--black-bg);
+        background: var(--caramel-dark);
         font-family: 'Cormorant Garamond', 'Times New Roman', serif;
         overflow-x: hidden;
-        color: var(--gold-light);
+        color: white;
       }
       
       #root {
         min-height: 100vh;
       }
       
-      /* Luxury Gold Loading Animation */
+      /* Luxury Caramel Loading Animation */
       .loading-spinner {
         position: fixed;
         top: 50%;
@@ -71,12 +71,12 @@
         transform: translate(-50%, -50%);
         width: 60px;
         height: 60px;
-        border: 3px solid rgba(212, 175, 55, 0.3);
+        border: 3px solid rgba(139, 69, 19, 0.3);
         border-top: 3px solid #D4AF37;
         border-radius: 50%;
         animation: spin 1.5s linear infinite;
         z-index: 9999;
-        box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        box-shadow: 0 0 20px rgba(139, 69, 19, 0.5);
       }
       
       .loading-spinner::before {
@@ -87,7 +87,7 @@
         right: -5px;
         bottom: -5px;
         border: 2px solid transparent;
-        border-top: 2px solid #FFD700;
+        border-top: 2px solid #D2691E;
         border-radius: 50%;
         animation: spin 2s linear infinite;
       }
@@ -97,7 +97,7 @@
         100% { transform: translate(-50%, -50%) rotate(360deg); }
       }
       
-      /* Luxury Background Effect */
+      /* Luxury Caramel Background Effect */
       .luxury-initial-bg {
         position: fixed;
         top: 0;
@@ -105,9 +105,9 @@
         width: 100%;
         height: 100%;
         background: 
-          radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
-          radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.08) 0%, transparent 50%),
-          linear-gradient(45deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+          radial-gradient(circle at 20% 80%, rgba(139, 69, 19, 0.3) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(210, 105, 30, 0.2) 0%, transparent 50%),
+          linear-gradient(45deg, var(--caramel-dark) 0%, var(--caramel-medium) 50%, var(--caramel-light) 100%);
         z-index: -1;
         animation: luxuryPulse 8s ease-in-out infinite;
       }
@@ -144,29 +144,29 @@
       }
       
       ::-webkit-scrollbar-track {
-        background: #1a1a1a;
+        background: var(--caramel-dark);
         border-radius: 10px;
       }
       
       ::-webkit-scrollbar-thumb {
-        background: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%);
+        background: linear-gradient(135deg, var(--caramel-light) 0%, var(--caramel-medium) 100%);
         border-radius: 10px;
-        border: 2px solid #1a1a1a;
+        border: 2px solid var(--caramel-dark);
       }
       
       ::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
+        background: linear-gradient(135deg, var(--caramel-medium) 0%, var(--caramel-light) 100%);
       }
       
       /* Luxury Text Selection */
       ::selection {
         background: rgba(212, 175, 55, 0.3);
-        color: #FFD700;
+        color: white;
       }
       
       ::-moz-selection {
         background: rgba(212, 175, 55, 0.3);
-        color: #FFD700;
+        color: white;
       }
     </style>
     
@@ -202,11 +202,11 @@
   </head>
   <body>
     <noscript>
-      <div style="text-align: center; padding: 50px; color: #D4AF37; font-family: 'Cormorant Garamond', serif; background: #0A0A0A; min-height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+      <div style="text-align: center; padding: 50px; color: #D4AF37; font-family: 'Cormorant Garamond', serif; background: #8B4513; min-height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column;">
         <div style="font-size: 4rem; margin-bottom: 2rem;">✨</div>
         <h1 style="font-size: 3rem; margin-bottom: 1rem; color: #FFD700;">JavaScript Required</h1>
-        <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">You need to enable JavaScript to experience Grace Ensemblier.</p>
-        <p style="font-size: 1.1rem; opacity: 0.8;">Our luxury home decor platform requires JavaScript for the ultimate experience.</p>
+        <p style="font-size: 1.2rem; margin-bottom: 0.5rem; color: white;">You need to enable JavaScript to experience Grace Ensemblier.</p>
+        <p style="font-size: 1.1rem; opacity: 0.8; color: white;">Our luxury home decor platform requires JavaScript for the ultimate experience.</p>
       </div>
     </noscript>
     
@@ -224,7 +224,7 @@
           const loadTime = performance.timing.loadTime;
           const luxuryLoadTime = Math.round(loadTime);
           console.log('%c✨ Grace Ensemblier Loaded', 'color: #D4AF37; font-size: 16px; font-weight: bold;');
-          console.log(`%cPage loaded in ${luxuryLoadTime}ms`, 'color: #FFD700; font-size: 14px;');
+          console.log(`%cPage loaded in ${luxuryLoadTime}ms`, 'color: #D2691E; font-size: 14px;');
         }, 0);
       });
       
@@ -247,7 +247,7 @@
       ║                                  ║
       ║   🏛️  GRACE ENSEMBLIER          ║
       ║                                  ║
-      ║   Luxury Home Decor Platform     ║
+      ║   Luxury Caramel Gold Decor      ║
       ║                                  ║
       ╚══════════════════════════════════╝
       `, 'color: #D4AF37; font-size: 12px;');

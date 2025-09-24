@@ -158,7 +158,7 @@ const Home = () => {
                   
                   <Box sx={{ p: 3, textAlign: 'center' }}>
                     <Typography variant="h5" sx={{ 
-                      color: 'white', 
+                      color: 'var(--caramel-dark)', 
                       fontWeight: 600, 
                       mb: 1,
                       fontFamily: 'Cormorant Garamond, serif'
@@ -166,18 +166,18 @@ const Home = () => {
                       {collection.title}
                     </Typography>
                     <Typography variant="body2" sx={{ 
-                      color: 'white', 
+                      color: 'var(--caramel-medium)', 
                       mb: 2,
                       lineHeight: 1.6
                     }}>
                       {collection.description}
                     </Typography>
                     <Typography variant="caption" sx={{ 
-                      color: 'white',
+                      color: 'var(--caramel-dark)',
                       fontWeight: 600,
                       textTransform: 'uppercase',
                       letterSpacing: 2,
-                      border: '1px solid rgba(255, 255, 255, 0.5)',
+                      border: '1px solid var(--caramel-medium)',
                       px: 2,
                       py: 1,
                       borderRadius: 4

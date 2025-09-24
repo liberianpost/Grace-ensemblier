@@ -74,7 +74,7 @@ const Home = () => {
             mb: 2,
             filter: 'drop-shadow(0 0 20px rgba(212, 175, 55, 0.5))'
           }} />
-          <Typography variant="h1" className="luxury-hero-title" sx={{ mb: 3 }}>
+          <Typography variant="h1" className="luxury-hero-title pulsating-title" sx={{ mb: 3 }}>
             GRACE ENSEMBLIER
           </Typography>
           <Typography variant="h4" className="luxury-hero-subtitle" sx={{ mb: 4 }}>

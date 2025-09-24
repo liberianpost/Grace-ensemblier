@@ -1,15 +1,9 @@
 import React from 'react';
 import { Container, Typography, Button, Grid, Box, Card, CardMedia } from '@mui/material';
-import { ArrowForward, PlayArrow, Star, Favorite, Share } from '@mui/icons-material';
+import { ArrowForward, PlayArrow, Star, Favorite, Share, Diamond } from '@mui/icons-material';
+import './Home.css';
 
 const Home = () => {
-  const featuredImages = [
-    'PHOTO-2025-09-24-17-30-46.jpg',
-    'PHOTO-2025-09-24-17-30-52.jpg',
-    'PHOTO-2025-09-24-17-31-13.jpg',
-    'PHOTO-2025-09-24-17-31-40.jpg'
-  ];
-
   const featuredCollections = [
     {
       title: 'Modern Luxury',
@@ -45,20 +39,23 @@ const Home = () => {
   ];
 
   return (
-    <Box sx={{ minHeight: '100vh', position: 'relative', overflow: 'hidden' }}>
-      {/* Animated Background Particles */}
-      <Box className="particles-container">
-        {[...Array(50)].map((_, i) => (
+    <Box sx={{ minHeight: '100vh', position: 'relative', overflow: 'hidden', background: 'var(--black-bg)' }}>
+      {/* Luxury Gold Background */}
+      <Box className="luxury-bg" />
+      
+      {/* Gold Particles */}
+      <Box className="gold-particles-container">
+        {[...Array(30)].map((_, i) => (
           <Box
             key={i}
-            className="particle"
+            className="gold-particle"
             sx={{
-              width: Math.random() * 100 + 50,
-              height: Math.random() * 100 + 50,
+              width: Math.random() * 100 + 20,
+              height: Math.random() * 100 + 20,
               top: `${Math.random() * 100}%`,
               left: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 15}s`,
-              opacity: Math.random() * 0.3 + 0.1
+              animationDelay: `${Math.random() * 20}s`,
+              opacity: Math.random() * 0.4 + 0.2
             }}
           />
         ))}
@@ -67,121 +64,122 @@ const Home = () => {
       <Container maxWidth="xl" sx={{ 
         position: 'relative', 
         zIndex: 2,
-        paddingTop: '15vh' 
+        paddingTop: '12vh' 
       }}>
         {/* Hero Section */}
-        <Box sx={{ textAlign: 'center', mb: 10 }}>
-          <Typography variant="h1" className="hero-title" sx={{ mb: 3, fontSize: { xs: '3rem', md: '4rem', lg: '5rem' } }}>
-            ELEVATE YOUR SPACE
+        <Box sx={{ textAlign: 'center', mb: 10, pt: 4 }}>
+          <Diamond sx={{ 
+            fontSize: 80, 
+            color: '#D4AF37', 
+            mb: 2,
+            filter: 'drop-shadow(0 0 20px rgba(212, 175, 55, 0.5))'
+          }} />
+          <Typography variant="h1" className="luxury-hero-title" sx={{ mb: 3 }}>
+            GRACE ENSEMBLIER
           </Typography>
-          <Typography variant="h4" className="hero-subtitle" sx={{ mb: 4, fontSize: { xs: '1.2rem', md: '1.5rem' } }}>
-            Where Art Meets Interior Design
+          <Typography variant="h4" className="luxury-hero-subtitle" sx={{ mb: 4 }}>
+            Where Luxury Meets Timeless Design
           </Typography>
           <Box sx={{ display: 'flex', gap: 3, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Button 
               variant="contained" 
               size="large"
-              className="glass-button"
+              className="gold-glass-button"
               endIcon={<ArrowForward />}
-              sx={{ px: 4, py: 1.5, fontSize: { xs: '0.9rem', md: '1.1rem' } }}
+              sx={{ px: 5, py: 2 }}
             >
-              Explore Collection
+              Discover Collection
             </Button>
             <Button 
               variant="outlined" 
               size="large"
-              className="glass-button"
+              className="gold-glass-button"
               startIcon={<PlayArrow />}
               sx={{ 
-                px: 4, 
-                py: 1.5, 
-                border: '2px solid rgba(255,255,255,0.3)',
-                fontSize: { xs: '0.9rem', md: '1.1rem' }
+                px: 5, 
+                py: 2,
+                border: '2px solid rgba(212, 175, 55, 0.5)'
               }}
             >
-              Showreel
+              Luxury Tour
             </Button>
           </Box>
         </Box>
 
-        {/* Featured Images Gallery */}
-        <Box sx={{ mb: 10 }}>
-          <Typography variant="h3" className="hero-title" sx={{ textAlign: 'center', mb: 4, fontSize: { xs: '2rem', md: '3rem' } }}>
-            Featured Collections
+        {/* Featured Collections */}
+        <Box sx={{ mb: 12 }}>
+          <Typography variant="h3" className="luxury-hero-title" sx={{ textAlign: 'center', mb: 6, fontSize: '3.5rem' }}>
+            Exclusive Collections
           </Typography>
-          <Grid container spacing={3}>
+          <Grid container spacing={4}>
             {featuredCollections.map((collection, index) => (
               <Grid item xs={12} sm={6} md={3} key={index}>
-                <Card className="glass-card" sx={{ 
-                  height: '100%', 
-                  background: 'rgba(255, 255, 255, 0.1)',
-                  backdropFilter: 'blur(20px)',
-                  border: '1px solid rgba(255, 255, 255, 0.2)',
-                  transition: 'all 0.3s ease',
-                  '&:hover': {
-                    transform: 'translateY(-10px) scale(1.02)',
-                    boxShadow: '0 25px 50px rgba(0,0,0,0.3)'
-                  }
-                }}>
-                  <Box sx={{ position: 'relative', overflow: 'hidden' }}>
+                <Card className="gold-glass-card" sx={{ height: '100%' }}>
+                  <Box className="luxury-image-container" sx={{ position: 'relative', overflow: 'hidden' }}>
                     <CardMedia
                       component="img"
-                      height="250"
+                      height="280"
                       image={`/${collection.image}`}
                       alt={collection.title}
                       sx={{ 
                         objectFit: 'cover',
-                        transition: 'transform 0.3s ease'
+                        transition: 'transform 0.4s ease',
+                        height: 280
                       }}
                     />
                     <Box sx={{
                       position: 'absolute',
-                      top: 10,
-                      right: 10,
+                      top: 12,
+                      right: 12,
                       display: 'flex',
-                      gap: 1
+                      gap: 1,
+                      zIndex: 2
                     }}>
                       <Button 
                         size="small" 
                         sx={{ 
                           minWidth: 'auto', 
-                          background: 'rgba(0,0,0,0.5)',
-                          color: 'white',
+                          background: 'rgba(10, 10, 10, 0.7)',
+                          color: '#D4AF37',
                           borderRadius: '50%',
-                          width: 35,
-                          height: 35
+                          width: 40,
+                          height: 40,
+                          '&:hover': {
+                            background: 'rgba(212, 175, 55, 0.9)',
+                            color: '#000'
+                          }
                         }}
                       >
                         <Favorite fontSize="small" />
-                      </Button>
-                      <Button 
-                        size="small" 
-                        sx={{ 
-                          minWidth: 'auto', 
-                          background: 'rgba(0,0,0,0.5)',
-                          color: 'white',
-                          borderRadius: '50%',
-                          width: 35,
-                          height: 35
-                        }}
-                      >
-                        <Share fontSize="small" />
                       </Button>
                     </Box>
                   </Box>
                   
                   <Box sx={{ p: 3, textAlign: 'center' }}>
-                    <Typography variant="h6" sx={{ color: 'white', fontWeight: 600, mb: 1 }}>
+                    <Typography variant="h5" sx={{ 
+                      color: '#D4AF37', 
+                      fontWeight: 600, 
+                      mb: 1,
+                      fontFamily: 'Cormorant Garamond, serif'
+                    }}>
                       {collection.title}
                     </Typography>
-                    <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)', mb: 2 }}>
+                    <Typography variant="body2" sx={{ 
+                      color: 'rgba(255, 248, 220, 0.8)', 
+                      mb: 2,
+                      lineHeight: 1.6
+                    }}>
                       {collection.description}
                     </Typography>
                     <Typography variant="caption" sx={{ 
-                      color: '#ff00de',
+                      color: '#FFD700',
                       fontWeight: 600,
                       textTransform: 'uppercase',
-                      letterSpacing: 1
+                      letterSpacing: 2,
+                      border: '1px solid #FFD700',
+                      px: 2,
+                      py: 1,
+                      borderRadius: 4
                     }}>
                       {collection.items}
                     </Typography>
@@ -192,20 +190,15 @@ const Home = () => {
           </Grid>
         </Box>
 
-        {/* Stats Section */}
-        <Box className="glass-card" sx={{ p: 6, mb: 10, textAlign: 'center' }}>
-          <Grid container spacing={4}>
+        {/* Luxury Stats Section */}
+        <Box className="luxury-stats" sx={{ mb: 12 }}>
+          <Grid container spacing={6}>
             {stats.map((stat, index) => (
-              <Grid item xs={6} md={3} key={index}>
-                <Typography variant="h3" sx={{ 
-                  color: '#ff00de', 
-                  fontWeight: 800,
-                  textShadow: '0 0 20px rgba(255,0,222,0.5)',
-                  mb: 1
-                }}>
+              <Grid item xs={6} md={3} key={index} sx={{ textAlign: 'center' }}>
+                <Typography className="luxury-stat-number">
                   {stat.number}
                 </Typography>
-                <Typography variant="h6" sx={{ color: 'white', fontWeight: 400 }}>
+                <Typography className="luxury-stat-label">
                   {stat.label}
                 </Typography>
               </Grid>
@@ -213,83 +206,31 @@ const Home = () => {
           </Grid>
         </Box>
 
-        {/* Feature Cards */}
-        <Grid container spacing={4} sx={{ mb: 10 }}>
-          {[
-            { 
-              title: 'Bespoke Designs', 
-              desc: 'Custom-made pieces for unique spaces', 
-              icon: '✨',
-              image: 'PHOTO-2025-09-24-17-30-46.jpg'
-            },
-            { 
-              title: 'Global Artisans', 
-              desc: 'Handcrafted by master craftsmen worldwide', 
-              icon: '🌍',
-              image: 'PHOTO-2025-09-24-17-30-52.jpg'
-            },
-            { 
-              title: 'Sustainable Luxury', 
-              desc: 'Eco-friendly materials, timeless design', 
-              icon: '♻️',
-              image: 'PHOTO-2025-09-24-17-31-13.jpg'
-            }
-          ].map((feature, index) => (
-            <Grid item xs={12} md={4} key={index}>
-              <Box 
-                className="glass-card floating"
-                sx={{ 
-                  p: 0,
-                  overflow: 'hidden',
-                  animationDelay: `${index * 2}s`,
-                  height: '100%'
-                }}
-              >
-                <CardMedia
-                  component="img"
-                  height="200"
-                  image={`/${feature.image}`}
-                  alt={feature.title}
-                  sx={{ objectFit: 'cover' }}
-                />
-                <Box sx={{ p: 4, textAlign: 'center' }}>
-                  <Typography variant="h2" sx={{ mb: 2, fontSize: '3rem' }}>
-                    {feature.icon}
-                  </Typography>
-                  <Typography variant="h5" sx={{ mb: 2, fontWeight: 600, color: 'white' }}>
-                    {feature.title}
-                  </Typography>
-                  <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.8)' }}>
-                    {feature.desc}
-                  </Typography>
-                </Box>
-              </Box>
-            </Grid>
-          ))}
-        </Grid>
-
-        {/* CTA Section */}
-        <Box sx={{ textAlign: 'center', mb: 10 }}>
-          <Typography variant="h3" className="hero-title" sx={{ mb: 3 }}>
-            Ready to Transform Your Space?
+        {/* Final CTA Section */}
+        <Box sx={{ textAlign: 'center', mb: 10, pt: 4 }}>
+          <Typography variant="h2" className="luxury-hero-title" sx={{ mb: 3, fontSize: '4rem' }}>
+            Experience Luxury
           </Typography>
-          <Typography variant="h6" className="hero-subtitle" sx={{ mb: 4 }}>
-            Join thousands of satisfied customers who've elevated their homes with our collections
+          <Typography variant="h5" className="luxury-hero-subtitle" sx={{ mb: 5 }}>
+            Join the elite circle of homeowners who trust Grace Ensemblier
           </Typography>
           <Button 
             variant="contained" 
             size="large"
-            className="glass-button"
-            endIcon={<Star />}
+            className="gold-glass-button"
+            endIcon={<Star sx={{ color: '#000' }} />}
             sx={{ 
-              px: 6, 
-              py: 2,
-              fontSize: '1.2rem',
-              background: 'linear-gradient(45deg, #ff00de, #ff6b6b)',
-              fontWeight: 600
+              px: 8, 
+              py: 2.5,
+              fontSize: '1.3rem',
+              background: 'var(--gold-gradient)',
+              '&:hover': {
+                background: 'var(--gold-gradient)',
+                transform: 'translateY(-3px) scale(1.05)'
+              }
             }}
           >
-            Start Shopping Now
+            Begin Your Journey
           </Button>
         </Box>
       </Container>

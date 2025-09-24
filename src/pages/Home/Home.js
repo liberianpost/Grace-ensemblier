@@ -39,7 +39,7 @@ const Home = () => {
   ];
 
   return (
-    <Box sx={{ minHeight: '100vh', position: 'relative', overflow: 'hidden', background: 'var(--caramel-dark)' }}>
+    <Box sx={{ minHeight: '100vh', position: 'relative', overflow: 'hidden', background: 'var(--caramel-light)' }}>
       {/* Caramel Background */}
       <Box className="caramel-bg" />
       
@@ -140,7 +140,7 @@ const Home = () => {
                         size="small" 
                         sx={{ 
                           minWidth: 'auto', 
-                          background: 'rgba(139, 69, 19, 0.7)',
+                          background: 'rgba(210, 180, 140, 0.7)',
                           color: '#D4AF37',
                           borderRadius: '50%',
                           width: 40,
@@ -158,7 +158,7 @@ const Home = () => {
                   
                   <Box sx={{ p: 3, textAlign: 'center' }}>
                     <Typography variant="h5" sx={{ 
-                      color: '#D4AF37', 
+                      color: 'white', 
                       fontWeight: 600, 
                       mb: 1,
                       fontFamily: 'Cormorant Garamond, serif'
@@ -173,11 +173,11 @@ const Home = () => {
                       {collection.description}
                     </Typography>
                     <Typography variant="caption" sx={{ 
-                      color: '#FFD700',
+                      color: 'white',
                       fontWeight: 600,
                       textTransform: 'uppercase',
                       letterSpacing: 2,
-                      border: '1px solid #FFD700',
+                      border: '1px solid rgba(255, 255, 255, 0.5)',
                       px: 2,
                       py: 1,
                       borderRadius: 4
@@ -196,7 +196,7 @@ const Home = () => {
           <Grid container spacing={6}>
             {stats.map((stat, index) => (
               <Grid item xs={6} md={3} key={index} sx={{ textAlign: 'center' }}>
-                <Typography className="luxury-stat-number">
+                <Typography className="luxury-stat-number" sx={{ color: 'white' }}>
                   {stat.number}
                 </Typography>
                 <Typography className="luxury-stat-label" sx={{ color: 'white' }}>
@@ -219,15 +219,15 @@ const Home = () => {
             variant="contained" 
             size="large"
             className="caramel-glass-button"
-            endIcon={<Star sx={{ color: '#000' }} />}
+            endIcon={<Star sx={{ color: 'white' }} />}
             sx={{ 
               px: 8, 
               py: 2.5,
               fontSize: '1.3rem',
-              background: 'var(--gold-gradient)',
+              background: 'rgba(255, 255, 255, 0.2)',
               color: 'white',
               '&:hover': {
-                background: 'var(--gold-gradient)',
+                background: 'rgba(255, 255, 255, 0.3)',
                 transform: 'translateY(-3px) scale(1.05)'
               }
             }}

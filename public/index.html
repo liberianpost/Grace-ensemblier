@@ -1,1 +1,154 @@
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#667eea" />
+    <meta name="description" content="Grace Ensemblier - Premium modern home decoration and interior design" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://firebasestorage.googleapis.com">
+    
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Grace Ensemblier - Premium Home Decor">
+    <meta property="og:description" content="Transform your space with our exclusive collection of modern home decoration and interior design pieces">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Grace Ensemblier - Premium Home Decor">
+    <meta name="twitter:description" content="Elevate your interior design with our luxury home decoration collection">
+    
+    <!-- iOS Safari Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Grace Ensemblier">
+    
+    <!-- Windows Meta Tags -->
+    <meta name="msapplication-TileColor" content="#667eea">
+    <meta name="msapplication-config" content="%PUBLIC_URL%/browserconfig.xml">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <title>Grace Ensemblier - Premium Home Decoration & Interior Design</title>
+    
+    <style>
+      /* Critical CSS for initial loading */
+      body {
+        margin: 0;
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+        font-family: 'Inter', sans-serif;
+        overflow-x: hidden;
+      }
+      
+      #root {
+        min-height: 100vh;
+      }
+      
+      /* Loading animation */
+      .loading-spinner {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 50px;
+        border: 3px solid rgba(255,255,255,0.3);
+        border-top: 3px solid #fff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        z-index: 9999;
+      }
+      
+      @keyframes gradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      
+      @keyframes spin {
+        0% { transform: translate(-50%, -50%) rotate(0deg); }
+        100% { transform: translate(-50%, -50%) rotate(360deg); }
+      }
+      
+      /* Hide loading spinner when app loads */
+      .loaded .loading-spinner {
+        display: none;
+      }
+      
+      /* Prevent FOUC (Flash of Unstyled Content) */
+      .no-js #root {
+        display: none;
+      }
+      
+      .js #root {
+        display: block;
+      }
+    </style>
+    
+    <script>
+      // Add JS class to html element and handle loading states
+      document.documentElement.className = 'js';
+      
+      window.addEventListener('load', function() {
+        document.body.classList.add('loaded');
+      });
+      
+      // Prevent right-click on images (optional protection)
+      document.addEventListener('contextmenu', function(e) {
+        if (e.target.tagName === 'IMG') {
+          e.preventDefault();
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <div style="text-align: center; padding: 50px; color: white; font-family: Arial, sans-serif;">
+        <h1>JavaScript Required</h1>
+        <p>You need to enable JavaScript to run this application.</p>
+        <p>Grace Ensemblier is a modern web application that requires JavaScript for the best experience.</p>
+      </div>
+    </noscript>
+    
+    <!-- Loading Spinner -->
+    <div class="loading-spinner"></div>
+    
+    <!-- Main App Container -->
+    <div id="root"></div>
+    
+    <!-- Performance Monitoring Script (optional) -->
+    <script>
+      // Performance monitoring
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          const loadTime = performance.timing.loadTime;
+          console.log('Page load time:', loadTime + 'ms');
+        }, 0);
+      });
+      
+      // Service Worker Registration (for future PWA features)
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('%PUBLIC_URL%/sw.js')
+            .then(function(registration) {
+              console.log('SW registered: ', registration);
+            })
+            .catch(function(registrationError) {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>

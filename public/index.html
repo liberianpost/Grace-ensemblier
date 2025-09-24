@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#8B4513" />
+    <meta name="theme-color" content="#A0522D" />
     <meta name="description" content="Grace Ensemblier - Luxury caramel gold premium home decoration and interior design" />
     
     <!-- Google Fonts -->
@@ -33,7 +33,7 @@
     <meta name="apple-mobile-web-app-title" content="Grace Ensemblier">
     
     <!-- Windows Meta Tags -->
-    <meta name="msapplication-TileColor" content="#8B4513">
+    <meta name="msapplication-TileColor" content="#A0522D">
     <meta name="msapplication-config" content="%PUBLIC_URL%/browserconfig.xml">
     
     <!-- PWA Manifest -->
@@ -46,9 +46,9 @@
       :root {
         --gold-primary: #D4AF37;
         --gold-secondary: #FFD700;
-        --caramel-dark: #8B4513;
-        --caramel-medium: #A0522D;
-        --caramel-light: #D2691E;
+        --caramel-dark: #A0522D;
+        --caramel-medium: #CD853F;
+        --caramel-light: #DEB887;
       }
       
       body {
@@ -71,12 +71,12 @@
         transform: translate(-50%, -50%);
         width: 60px;
         height: 60px;
-        border: 3px solid rgba(139, 69, 19, 0.3);
+        border: 3px solid rgba(160, 82, 45, 0.3);
         border-top: 3px solid #D4AF37;
         border-radius: 50%;
         animation: spin 1.5s linear infinite;
         z-index: 9999;
-        box-shadow: 0 0 20px rgba(139, 69, 19, 0.5);
+        box-shadow: 0 0 20px rgba(160, 82, 45, 0.5);
       }
       
       .loading-spinner::before {
@@ -87,7 +87,7 @@
         right: -5px;
         bottom: -5px;
         border: 2px solid transparent;
-        border-top: 2px solid #D2691E;
+        border-top: 2px solid #CD853F;
         border-radius: 50%;
         animation: spin 2s linear infinite;
       }
@@ -105,8 +105,8 @@
         width: 100%;
         height: 100%;
         background: 
-          radial-gradient(circle at 20% 80%, rgba(139, 69, 19, 0.3) 0%, transparent 50%),
-          radial-gradient(circle at 80% 20%, rgba(210, 105, 30, 0.2) 0%, transparent 50%),
+          radial-gradient(circle at 20% 80%, rgba(160, 82, 45, 0.3) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(205, 133, 63, 0.2) 0%, transparent 50%),
           linear-gradient(45deg, var(--caramel-dark) 0%, var(--caramel-medium) 50%, var(--caramel-light) 100%);
         z-index: -1;
         animation: luxuryPulse 8s ease-in-out infinite;
@@ -202,9 +202,9 @@
   </head>
   <body>
     <noscript>
-      <div style="text-align: center; padding: 50px; color: #D4AF37; font-family: 'Cormorant Garamond', serif; background: #8B4513; min-height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+      <div style="text-align: center; padding: 50px; color: #D4AF37; font-family: 'Cormorant Garamond', serif; background: #A0522D; min-height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column;">
         <div style="font-size: 4rem; margin-bottom: 2rem;">✨</div>
-        <h1 style="font-size: 3rem; margin-bottom: 1rem; color: #FFD700;">JavaScript Required</h1>
+        <h1 style="font-size: 3rem; margin-bottom: 1rem; color: white;">JavaScript Required</h1>
         <p style="font-size: 1.2rem; margin-bottom: 0.5rem; color: white;">You need to enable JavaScript to experience Grace Ensemblier.</p>
         <p style="font-size: 1.1rem; opacity: 0.8; color: white;">Our luxury home decor platform requires JavaScript for the ultimate experience.</p>
       </div>
@@ -224,7 +224,7 @@
           const loadTime = performance.timing.loadTime;
           const luxuryLoadTime = Math.round(loadTime);
           console.log('%c✨ Grace Ensemblier Loaded', 'color: #D4AF37; font-size: 16px; font-weight: bold;');
-          console.log(`%cPage loaded in ${luxuryLoadTime}ms`, 'color: #D2691E; font-size: 14px;');
+          console.log(`%cPage loaded in ${luxuryLoadTime}ms`, 'color: #CD853F; font-size: 14px;');
         }, 0);
       });
       

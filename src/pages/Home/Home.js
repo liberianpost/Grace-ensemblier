@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Typography, Button, Grid, Box, Card, CardMedia } from '@mui/material';
-import { ArrowForward, PlayArrow, Star, Favorite, Share, Diamond } from '@mui/icons-material';
+import { ArrowForward, PlayArrow, Star, Favorite, Diamond } from '@mui/icons-material';
 import './Home.css';
 
 const Home = () => {
@@ -43,19 +43,18 @@ const Home = () => {
       {/* Caramel Background */}
       <Box className="caramel-bg" />
       
-      {/* Gold Particles */}
+      {/* Gold Particles - Removed animation */}
       <Box className="gold-particles-container">
-        {[...Array(30)].map((_, i) => (
+        {[...Array(15)].map((_, i) => (
           <Box
             key={i}
             className="gold-particle"
             sx={{
-              width: Math.random() * 100 + 20,
-              height: Math.random() * 100 + 20,
+              width: Math.random() * 60 + 10,
+              height: Math.random() * 60 + 10,
               top: `${Math.random() * 100}%`,
               left: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 20}s`,
-              opacity: Math.random() * 0.4 + 0.2
+              opacity: Math.random() * 0.3 + 0.1
             }}
           />
         ))}
@@ -64,40 +63,39 @@ const Home = () => {
       <Container maxWidth="xl" sx={{ 
         position: 'relative', 
         zIndex: 2,
-        paddingTop: '12vh' 
+        paddingTop: '8vh' 
       }}>
         {/* Hero Section */}
-        <Box sx={{ textAlign: 'center', mb: 10, pt: 4 }}>
+        <Box sx={{ textAlign: 'center', mb: 8, pt: 2 }}>
           <Diamond sx={{ 
-            fontSize: 80, 
+            fontSize: 60, 
             color: '#D4AF37', 
-            mb: 2,
-            filter: 'drop-shadow(0 0 20px rgba(212, 175, 55, 0.5))'
+            mb: 2
           }} />
-          <Typography variant="h1" className="luxury-hero-title pulsating-title" sx={{ mb: 3, color: 'white' }}>
+          <Typography variant="h1" className="luxury-hero-title" sx={{ mb: 2, color: 'white' }}>
             GRACE ENSEMBLIER
           </Typography>
-          <Typography variant="h4" className="luxury-hero-subtitle" sx={{ mb: 4, color: 'white' }}>
+          <Typography variant="h4" className="luxury-hero-subtitle" sx={{ mb: 3, color: 'white' }}>
             Where Luxury Meets Timeless Design
           </Typography>
-          <Box sx={{ display: 'flex', gap: 3, justifyContent: 'center', flexWrap: 'wrap' }}>
+          <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Button 
               variant="contained" 
               size="large"
-              className="caramel-glass-button"
+              className="caramel-glass-button discover-collection-btn"
               endIcon={<ArrowForward />}
-              sx={{ px: 5, py: 2, color: 'white' }}
+              sx={{ px: 4, py: 1.5, color: 'white' }}
             >
               Discover Collection
             </Button>
             <Button 
               variant="outlined" 
               size="large"
-              className="caramel-glass-button"
+              className="caramel-glass-button luxury-tour-btn"
               startIcon={<PlayArrow />}
               sx={{ 
-                px: 5, 
-                py: 2,
+                px: 4, 
+                py: 1.5,
                 border: '2px solid rgba(212, 175, 55, 0.5)',
                 color: 'white'
               }}
@@ -108,30 +106,30 @@ const Home = () => {
         </Box>
 
         {/* Featured Collections */}
-        <Box sx={{ mb: 12 }}>
-          <Typography variant="h3" className="luxury-hero-title" sx={{ textAlign: 'center', mb: 6, fontSize: '3.5rem', color: 'white' }}>
+        <Box sx={{ mb: 8 }}>
+          <Typography variant="h3" className="luxury-hero-title" sx={{ textAlign: 'center', mb: 4, fontSize: '2.5rem', color: 'white' }}>
             Exclusive Collections
           </Typography>
-          <Grid container spacing={4}>
+          <Grid container spacing={3}>
             {featuredCollections.map((collection, index) => (
               <Grid item xs={12} sm={6} md={3} key={index}>
                 <Card className="caramel-glass-card" sx={{ height: '100%' }}>
                   <Box className="luxury-image-container" sx={{ position: 'relative', overflow: 'hidden' }}>
                     <CardMedia
                       component="img"
-                      height="280"
+                      height="200"
                       image={`/${collection.image}`}
                       alt={collection.title}
                       sx={{ 
                         objectFit: 'cover',
-                        transition: 'transform 0.4s ease',
-                        height: 280
+                        transition: 'transform 0.3s ease',
+                        height: 200
                       }}
                     />
                     <Box sx={{
                       position: 'absolute',
-                      top: 12,
-                      right: 12,
+                      top: 8,
+                      right: 8,
                       display: 'flex',
                       gap: 1,
                       zIndex: 2
@@ -143,8 +141,8 @@ const Home = () => {
                           background: 'rgba(210, 180, 140, 0.7)',
                           color: '#D4AF37',
                           borderRadius: '50%',
-                          width: 40,
-                          height: 40,
+                          width: 32,
+                          height: 32,
                           '&:hover': {
                             background: 'rgba(212, 175, 55, 0.9)',
                             color: '#000'
@@ -156,11 +154,12 @@ const Home = () => {
                     </Box>
                   </Box>
                   
-                  <Box sx={{ p: 3, textAlign: 'center' }}>
+                  <Box sx={{ p: 2, textAlign: 'center' }}>
                     <Typography variant="h5" sx={{ 
                       color: 'var(--caramel-dark)', 
                       fontWeight: 600, 
                       mb: 1,
+                      fontSize: '1.3rem',
                       fontFamily: 'Cormorant Garamond, serif'
                     }}>
                       {collection.title}
@@ -168,7 +167,8 @@ const Home = () => {
                     <Typography variant="body2" sx={{ 
                       color: 'var(--caramel-medium)', 
                       mb: 2,
-                      lineHeight: 1.6
+                      lineHeight: 1.4,
+                      fontSize: '0.9rem'
                     }}>
                       {collection.description}
                     </Typography>
@@ -176,11 +176,12 @@ const Home = () => {
                       color: 'var(--caramel-dark)',
                       fontWeight: 600,
                       textTransform: 'uppercase',
-                      letterSpacing: 2,
+                      letterSpacing: 1,
                       border: '1px solid var(--caramel-medium)',
-                      px: 2,
-                      py: 1,
-                      borderRadius: 4
+                      px: 1.5,
+                      py: 0.5,
+                      borderRadius: 4,
+                      fontSize: '0.75rem'
                     }}>
                       {collection.items}
                     </Typography>
@@ -192,8 +193,8 @@ const Home = () => {
         </Box>
 
         {/* Luxury Stats Section */}
-        <Box className="luxury-stats" sx={{ mb: 12 }}>
-          <Grid container spacing={6}>
+        <Box className="luxury-stats" sx={{ mb: 8 }}>
+          <Grid container spacing={4}>
             {stats.map((stat, index) => (
               <Grid item xs={6} md={3} key={index} sx={{ textAlign: 'center' }}>
                 <Typography className="luxury-stat-number" sx={{ color: 'white' }}>
@@ -208,28 +209,24 @@ const Home = () => {
         </Box>
 
         {/* Final CTA Section */}
-        <Box sx={{ textAlign: 'center', mb: 10, pt: 4 }}>
-          <Typography variant="h2" className="luxury-hero-title" sx={{ mb: 3, fontSize: '4rem', color: 'white' }}>
+        <Box sx={{ textAlign: 'center', mb: 8, pt: 2 }}>
+          <Typography variant="h2" className="luxury-hero-title" sx={{ mb: 2, fontSize: '2.5rem', color: 'white' }}>
             Experience Luxury
           </Typography>
-          <Typography variant="h5" className="luxury-hero-subtitle" sx={{ mb: 5, color: 'white' }}>
+          <Typography variant="h5" className="luxury-hero-subtitle" sx={{ mb: 3, color: 'white' }}>
             Join the elite circle of homeowners who trust Grace Ensemblier
           </Typography>
           <Button 
             variant="contained" 
             size="large"
-            className="caramel-glass-button"
+            className="caramel-glass-button begin-journey-btn"
             endIcon={<Star sx={{ color: 'white' }} />}
             sx={{ 
-              px: 8, 
-              py: 2.5,
-              fontSize: '1.3rem',
+              px: 6, 
+              py: 1.5,
+              fontSize: '1.1rem',
               background: 'rgba(255, 255, 255, 0.2)',
-              color: 'white',
-              '&:hover': {
-                background: 'rgba(255, 255, 255, 0.3)',
-                transform: 'translateY(-3px) scale(1.05)'
-              }
+              color: 'white'
             }}
           >
             Begin Your Journey

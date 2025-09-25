@@ -39,9 +39,9 @@ const Home = () => {
   ];
 
   return (
-    <Box sx={{ minHeight: '100vh', position: 'relative', overflow: 'hidden', background: 'var(--caramel-light)' }}>
-      {/* Caramel Background */}
-      <Box className="caramel-bg" />
+    <Box sx={{ minHeight: '100vh', position: 'relative', overflow: 'hidden', background: 'white' }}>
+      {/* White Background */}
+      <Box className="white-bg" />
       
       {/* Gold Particles - Removed animation */}
       <Box className="gold-particles-container">
@@ -72,32 +72,32 @@ const Home = () => {
             color: '#D4AF37', 
             mb: 2
           }} />
-          <Typography variant="h1" className="luxury-hero-title" sx={{ mb: 2, color: 'white' }}>
+          <Typography variant="h1" className="luxury-hero-title" sx={{ mb: 2, color: 'black' }}>
             GRACE ENSEMBLIER
           </Typography>
-          <Typography variant="h4" className="luxury-hero-subtitle" sx={{ mb: 3, color: 'white' }}>
+          <Typography variant="h4" className="luxury-hero-subtitle" sx={{ mb: 3, color: 'black' }}>
             Where Luxury Meets Timeless Design
           </Typography>
           <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Button 
               variant="contained" 
               size="large"
-              className="caramel-glass-button discover-collection-btn"
+              className="white-glass-button discover-collection-btn"
               endIcon={<ArrowForward />}
-              sx={{ px: 4, py: 1.5, color: 'white' }}
+              sx={{ px: 4, py: 1.5, color: 'black' }}
             >
               Discover Collection
             </Button>
             <Button 
               variant="outlined" 
               size="large"
-              className="caramel-glass-button luxury-tour-btn"
+              className="white-glass-button luxury-tour-btn"
               startIcon={<PlayArrow />}
               sx={{ 
                 px: 4, 
                 py: 1.5,
-                border: '2px solid rgba(212, 175, 55, 0.5)',
-                color: 'white'
+                border: '2px solid rgba(0, 0, 0, 0.3)',
+                color: 'black'
               }}
             >
               Luxury Tour
@@ -107,13 +107,13 @@ const Home = () => {
 
         {/* Featured Collections */}
         <Box sx={{ mb: 8 }}>
-          <Typography variant="h3" className="luxury-hero-title" sx={{ textAlign: 'center', mb: 4, fontSize: '2.5rem', color: 'white' }}>
+          <Typography variant="h3" className="luxury-hero-title" sx={{ textAlign: 'center', mb: 4, fontSize: '2.5rem', color: 'black' }}>
             Exclusive Collections
           </Typography>
           <Grid container spacing={3}>
             {featuredCollections.map((collection, index) => (
               <Grid item xs={12} sm={6} md={3} key={index}>
-                <Card className="caramel-glass-card" sx={{ height: '100%' }}>
+                <Card className="white-glass-card" sx={{ height: '100%' }}>
                   <Box className="luxury-image-container" sx={{ position: 'relative', overflow: 'hidden' }}>
                     <CardMedia
                       component="img"
@@ -138,7 +138,7 @@ const Home = () => {
                         size="small" 
                         sx={{ 
                           minWidth: 'auto', 
-                          background: 'rgba(210, 180, 140, 0.7)',
+                          background: 'rgba(255, 255, 255, 0.9)',
                           color: '#D4AF37',
                           borderRadius: '50%',
                           width: 32,
@@ -156,7 +156,7 @@ const Home = () => {
                   
                   <Box sx={{ p: 2, textAlign: 'center' }}>
                     <Typography variant="h5" sx={{ 
-                      color: 'var(--caramel-dark)', 
+                      color: 'black', 
                       fontWeight: 600, 
                       mb: 1,
                       fontSize: '1.3rem',
@@ -165,7 +165,7 @@ const Home = () => {
                       {collection.title}
                     </Typography>
                     <Typography variant="body2" sx={{ 
-                      color: 'var(--caramel-medium)', 
+                      color: '#666', 
                       mb: 2,
                       lineHeight: 1.4,
                       fontSize: '0.9rem'
@@ -173,11 +173,11 @@ const Home = () => {
                       {collection.description}
                     </Typography>
                     <Typography variant="caption" sx={{ 
-                      color: 'var(--caramel-dark)',
+                      color: 'black',
                       fontWeight: 600,
                       textTransform: 'uppercase',
                       letterSpacing: 1,
-                      border: '1px solid var(--caramel-medium)',
+                      border: '1px solid #ddd',
                       px: 1.5,
                       py: 0.5,
                       borderRadius: 4,
@@ -197,10 +197,10 @@ const Home = () => {
           <Grid container spacing={4}>
             {stats.map((stat, index) => (
               <Grid item xs={6} md={3} key={index} sx={{ textAlign: 'center' }}>
-                <Typography className="luxury-stat-number" sx={{ color: 'white' }}>
+                <Typography className="luxury-stat-number" sx={{ color: 'black' }}>
                   {stat.number}
                 </Typography>
-                <Typography className="luxury-stat-label" sx={{ color: 'white' }}>
+                <Typography className="luxury-stat-label" sx={{ color: 'black' }}>
                   {stat.label}
                 </Typography>
               </Grid>
@@ -210,23 +210,23 @@ const Home = () => {
 
         {/* Final CTA Section */}
         <Box sx={{ textAlign: 'center', mb: 8, pt: 2 }}>
-          <Typography variant="h2" className="luxury-hero-title" sx={{ mb: 2, fontSize: '2.5rem', color: 'white' }}>
+          <Typography variant="h2" className="luxury-hero-title" sx={{ mb: 2, fontSize: '2.5rem', color: 'black' }}>
             Experience Luxury
           </Typography>
-          <Typography variant="h5" className="luxury-hero-subtitle" sx={{ mb: 3, color: 'white' }}>
+          <Typography variant="h5" className="luxury-hero-subtitle" sx={{ mb: 3, color: 'black' }}>
             Join the elite circle of homeowners who trust Grace Ensemblier
           </Typography>
           <Button 
             variant="contained" 
             size="large"
-            className="caramel-glass-button begin-journey-btn"
-            endIcon={<Star sx={{ color: 'white' }} />}
+            className="white-glass-button begin-journey-btn"
+            endIcon={<Star sx={{ color: 'black' }} />}
             sx={{ 
               px: 6, 
               py: 1.5,
               fontSize: '1.1rem',
-              background: 'rgba(255, 255, 255, 0.2)',
-              color: 'white'
+              background: 'rgba(0, 0, 0, 0.05)',
+              color: 'black'
             }}
           >
             Begin Your Journey
